@@ -6,7 +6,7 @@ import logo from '../../assets/logo.jpg'
 const Navbar = () => {
   const router=useRouter()
   return (
-    <div className="fixed top-0 p-4 flex justify-between bg-gray-800 w-full h-14">
+    <div className="fixed top-0 p-4 flex justify-between bg-[#141318] border-b-2 border-[#292433] w-full h-14">
       <div className="flex gap-2 cursor-pointer" onClick={()=>{
         router.push('/')
       }}>
@@ -15,7 +15,7 @@ const Navbar = () => {
         alt=""
         /> */}
         <div>Logo</div>
-        <div>Feli</div>
+        <div className="text-md font-bold">Feli</div>
       </div>
     </div>
   );

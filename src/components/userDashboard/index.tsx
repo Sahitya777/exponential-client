@@ -37,21 +37,21 @@ const UserDashboard = () => {
   ]);
   const [sidebarOptionSelected, setsidebarOptionSelected] = useState<number>(0) //0 for dashboard 1 for integration and 2 for settings
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex">
+    <div className="min-h-screen bg-[#141318] text-white flex">
       {/* Sidebar */}
-      <div className="w-64 bg-gray-900 pt-6 mt-15">
+      <div className="w-64 bg-[#141318] border-r-2 border-[#272231] pt-6 mt-15">
         <nav className="mt-12">
-          <ul>
-            <li className="text-green-400 pl-4 py-2 flex items-center gap-2 bg-gray-600 cursor-pointer hover:bg-gray-600">
-              <div className="bg-green-400 w-3 h-3 rounded-full"></div>
+          <ul className="uppercase">
+            <li className="text-green-400 pl-4 py-2 flex items-center gap-2 bg-[#201b26] cursor-pointer hover:bg-[#201b26]">
+              <div className="bg-[#60f7aa] w-5 h-5 rounded-full"></div>
               Dashboard
             </li>
-            <li className="text-gray-400 pl-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-gray-600">
-              <div className="bg-gray-400 w-3 h-3 rounded-full"></div>
+            <li className="text-[#646e68]  pl-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-[#201b26]">
+              <div className="bg-[#646e68] w-5 h-5 rounded-full"></div>
               Integration
             </li>
-            <li className="text-gray-400 pl-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-gray-600">
-              <div className="bg-gray-400 w-3 h-3 rounded-full"></div>
+            <li className="text-[#646e68] pl-4 py-2 flex items-center gap-2 cursor-pointer hover:bg-[#201b26]">
+              <div className="bg-[#646e68] w-5 h-5 rounded-full"></div>
               Settings
             </li>
           </ul>

@@ -11,7 +11,6 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
   }
 
   const { email, password } = req.body;
-  console.log(email,password,'params')
 
   if (!email || !password) {
     return res.status(400).json({ success: false, message: "Email and password are required" });
@@ -19,7 +18,6 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
 
   try {
     let user = await User.findOne({ email });
-    console.log(user,'found one')
 
     if (!user) {
       // Hash password and create a new user
@@ -29,7 +27,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
 
       return res.status(201).json({ 
         success: true, 
-        message: "User created successfully", 
+        message: "Login successfull", 
         userId: user._id 
       });
     }
@@ -40,7 +38,7 @@ export default async function handler(req:NextApiRequest, res:NextApiResponse) {
       return res.status(401).json({ success: false, message: "Incorrect password" });
     }
 
-    res.status(200).json({ success: true, message: "Login successful", isMatch });
+    res.status(200).json({ success: true, message: "Login successfull", isMatch });
 
   } catch (error) {
     console.error(error);
