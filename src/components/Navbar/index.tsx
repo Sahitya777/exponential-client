@@ -15,7 +15,7 @@ const Navbar = () => {
         alt=""
         /> */}
         <div>Logo</div>
-        <div>Exponential</div>
+        <div>Feli</div>
       </div>
     </div>
   );

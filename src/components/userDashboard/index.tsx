@@ -58,7 +58,7 @@ const UserDashboard = () => {
         </nav>
       </div>
       {/* Main Dashboard */}
-      <div className="ml-6 flex gap-4 mt-20">
+      <div className="ml-6 flex gap-4 mt-20 max-w-3/5 overflow-auto">
         {usercampaignDetails.map((userCampaignDetail: campaignDetail, index: number) => (
           <DashboardCard
             title={userCampaignDetail.title}

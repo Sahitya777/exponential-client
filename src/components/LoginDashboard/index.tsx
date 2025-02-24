@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -13,14 +14,28 @@ const LoginDashboard = () => {
   const handleLogin = async () => {
     try {
       if (loginModeSelected === 0) {
-        router.push('/dashboard')
+        //assuming the login is success for now
+        const res=await axios.post('/api/login',{email,password})
+        if(res.status===200 || res.status===201){
+          toast.success(res?.data.message,{
+            position:'bottom-right'
+          })
+          router.push('/dashboard')
+        }
       } else {
         if (password !== confirmPassword) {
           toast.error("Passwords don't match", {
             position: "bottom-right",
           });
+        }else{
+          const res=await axios.post('/api/login',{email,password})
+          if(res.status===200 || res.status===201){
+            toast.success(res?.data.message,{
+              position:'bottom-right'
+            })
+            router.push('/dashboard')
+          }
         }
-        router.push('/dashboard')
       }
     } catch (error) {
       console.log(error, "err while login");
@@ -56,7 +71,7 @@ const LoginDashboard = () => {
         </p>
         <div>
           <input
-            type="text"
+            type="email"
             className="w-full bg-transparent border-t border-b border-gray-500 
                        pt-2 pb-2 pl-4 text-white placeholder-gray-400 focus:outline-none"
             placeholder="EMAIL"

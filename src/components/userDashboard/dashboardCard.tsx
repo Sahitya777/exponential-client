@@ -6,7 +6,7 @@ const DashboardCard = ({
   saved,
   calls,
   details
-}: any) => {
+}: {title:string,saved:number,calls:number,details:individualDetail[]}) => {
   return (
     <div className="bg-gray-900 p-6 rounded-xl shadow-lg w-80 h-4/5 min-h-fit">
       <div className="flex gap-2 items-center border-b border-gray-700 pb-4">
@@ -27,7 +27,7 @@ const DashboardCard = ({
       <div className="mt-4 text-gray-300 text-sm grid grid-cols-2 gap-6">
         {details.map((item:individualDetail, index:number) => (
           <div key={index} className="flex flex-col">
-            <p className="text-white text-2xl font-bold">{item.value}</p>
+            <p className="text-white text-2xl font-bold">{typeof(item.value)==="number"?formatNumberEs(item.value):item.value}</p>
             <p className="text-gray-300 text-sm">{item.label}</p>
           </div>
         ))}
